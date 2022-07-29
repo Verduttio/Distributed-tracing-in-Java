@@ -1,0 +1,39 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  zipkin:
+    base-url: http://172.19.0.1:9411/
+  cloud:
+    gateway:
+      routes:
+        - id: COUNTRY-SERVICE
+          uri: lb://COUNTRY-SERVICE
+          predicates:
+            - Path=/countries/**
+        - id: DIRECTOR-SERVICE
+          uri: lb://DIRECTOR-SERVICE
+          predicates:
+            - Path=/directors/**
+        - id: DISTRIBUTION-SERVICE
+          uri: lb://DISTRIBUTION-SERVICE
+          predicates:
+            - Path=/distributions/**
+        - id: GENRE-SERVICE
+          uri: lb://GENRE-SERVICE
+          predicates:
+            - Path=/genres/**
+        - id: MOVIE-SERVICE
+          uri: lb://MOVIE-SERVICE
+          predicates:
+            - Path=/movies/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://172.19.0.1:8761/eureka/
+  instance:
+    hostname: 172.19.0.1
