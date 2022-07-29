@@ -1,7 +1,7 @@
 # Distributed-tracing-in-Java
 
 ## Description
-Basic movie app based on microservices architecture to show the logic of distributed tracing.
+Basic movie app based on microservices architecture to show the logic of distributed tracing using SigNoz and Zipkin.
 
 Created in spring boot using spring frameworks:
   * WEB
