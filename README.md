@@ -31,4 +31,5 @@ Created in spring boot using spring frameworks:
   2.1. Put opentelemetry-javaagent.jar in build directory in each service. (Build dir should appear when you open the project in your IDE). 
 3. Change Dockerfile in each service. You have to provide YOUR IP of SigNoz Backend in `-Dotel.exporter.otlp.endpoint`.
 4. Run `run_services_docker.sh` script.
+
 If something went wrong change urls in application-docker.yml in each service to IPs of your docker containers.
