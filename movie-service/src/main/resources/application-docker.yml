@@ -1,0 +1,20 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: MOVIE-SERVICE
+  zipkin:
+    base-url: http://172.19.0.1:9411/
+  sleuth:
+    sampler:
+      probability: 1.0
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://172.19.0.1:8761/eureka/
+  instance:
+    hostname: 172.19.0.1
