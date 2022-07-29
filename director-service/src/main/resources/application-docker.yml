@@ -1,0 +1,22 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: DIRECTOR-SERVICE
+  zipkin:
+    base-url: http://172.19.0.1:9411/
+  sleuth:
+    sampler:
+      probability: 1.0
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://172.19.0.1:8761/eureka/
+  instance:
+#    hostname: localhost
+    hostname: 172.19.0.1
